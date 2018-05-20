@@ -25,5 +25,12 @@
   <%= @movie.director %>
 </p>
 
+<p>
+  <strong>Pictures:</strong>
+  <% @movie.pictures.each_with_index do |picture, index| %>
+    <%= image_tag(picture.url, size: 150, alt: "picture#{index}") %>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
