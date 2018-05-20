@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 # CSS framework
 gem 'semantic-ui-sass'
+# jQuery
+gem 'jquery-rails'
 # File uploading
 gem 'carrierwave'
 # Authentication
