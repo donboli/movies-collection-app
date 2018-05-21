@@ -2,5 +2,8 @@
 
 <%= render 'form', movie: @movie %>
 
-<%= link_to 'Show', @movie %> |
-<%= link_to 'Back', movies_path %>
+<div class="ui buttons">
+  <%= link_to 'Back', movies_path, class: 'ui button' %>
+  <div class="or"></div>
+  <%= link_to 'Show', @movie, class: 'ui button teal' %>
+</div>

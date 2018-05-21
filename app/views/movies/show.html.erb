@@ -35,5 +35,8 @@
   </div>
 </div>
 
-<%= link_to 'Edit', edit_movie_path(@movie), class: 'ui button' %> |
-<%= link_to 'Back', movies_path %>
+<div class="ui buttons">
+  <%= link_to 'Back', movies_path, class: 'ui button' %>
+  <div class="or"></div>
+  <%= link_to 'Edit', edit_movie_path(@movie), class: 'ui button yellow' %> |
+</div>
