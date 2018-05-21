@@ -1,34 +1,39 @@
-<p>
-  <strong>Name:</strong>
-  <%= @movie.name %>
-</p>
+<div class="ui segments raised">
+  <div class="ui segment clearing red">
+    <h1 class="ui left floated header no-bottom-margin"><%= @movie.name %></h1>
+    <%= render 'rating', rating: @movie.rating %>
+  </div>
 
-<p>
-  <strong>Synopsis:</strong>
-  <%= @movie.synopsis %>
-</p>
+  <div class="ui segment">
+    <div class="ui medium images">
+      <% @movie.pictures.each_with_index do |picture, index| %>
+        <%= image_tag(picture.url, class: 'ui image rounded', alt: "picture#{index}") %>
+      <% end %>
+    </div>
+  </div>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @movie.rating %>
-</p>
+  <div class="ui segment">
+    <strong>Synopsis:</strong>
+    <%= @movie.synopsis %>
+  </div>
 
-<p>
-  <strong>Actors:</strong>
-  <%= @movie.actors %>
-</p>
+  <div class="ui segments horizontal">
+    <div class="ui segment">
+      <strong>Rating:</strong>
+      <%= @movie.rating %>
+    </div>
 
-<p>
-  <strong>Director:</strong>
-  <%= @movie.director %>
-</p>
+    <div class="ui segment">
+      <strong>Actors:</strong>
+      <%= @movie.actors %>
+    </div>
 
-<p>
-  <strong>Pictures:</strong>
-  <% @movie.pictures.each_with_index do |picture, index| %>
-    <%= image_tag(picture.url, size: 150, alt: "picture#{index}") %>
-  <% end %>
-</p>
+    <div class="ui segment">
+      <strong>Director:</strong>
+      <%= @movie.director %>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>

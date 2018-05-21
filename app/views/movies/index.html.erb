@@ -11,12 +11,7 @@
       </div>
       <div class="content">
         <div class="meta right floated">
-          <% (1..movie.rating).each do %>
-            <%= semantic_icon('star active') %>
-          <% end %>
-          <% (movie.rating...5).each do %>
-            <%= semantic_icon('star outline') %>
-          <% end %>
+          <%= render 'rating', rating: movie.rating %>
         </div>
         <div class="header"><%= movie.name %></div>
         <div class="meta">
