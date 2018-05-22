@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  before do
+    ActsAsTenant.default_tenant = create(:user)
+  end
+
+  after do
+    ActsAsTenant.default_tenant = nil
+  end
+
+  it { is_expected.to validate_presence_of(:name) }
 end
