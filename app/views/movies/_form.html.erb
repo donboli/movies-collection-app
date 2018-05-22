@@ -25,7 +25,7 @@
   <div class="three fields">
     <div class="field">
       <%= form.label :rating %>
-      <%= form.number_field :rating %>
+      <%= form.number_field :rating, min: 0, max: 5, value: 0 %>
     </div>
 
     <div class="field">
