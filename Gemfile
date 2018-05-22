@@ -41,6 +41,8 @@ gem 'jquery-rails'
 gem 'carrierwave'
 # Authentication
 gem 'devise'
+# Multi-tenancy through shared DB
+gem 'acts_as_tenant'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
