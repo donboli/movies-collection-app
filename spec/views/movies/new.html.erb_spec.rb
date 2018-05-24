@@ -1,30 +1,27 @@
 require 'rails_helper'
+require_relative 'shared_examples'
 
 RSpec.describe "movies/new", type: :view do
+  include_examples 'movie form', 'post'
+
   before(:each) do
-    assign(:movie, Movie.new(
-      :name => "MyString",
-      :synopsis => "MyText",
-      :rating => 1,
-      :actors => "MyString",
-      :director => "MyString"
-    ))
+    ActsAsTenant.current_tenant = create(:user)
+    @movie = assign(:movie, create(:movie))
   end
 
-  it "renders new movie form" do
+  after do
+    ActsAsTenant.current_tenant = nil
+  end
+
+  it "renders the new title" do
     render
 
-    assert_select "form[action=?][method=?]", movies_path, "post" do
+    assert_select 'h1', 'New Movie'
+  end
 
-      assert_select "input[name=?]", "movie[name]"
+  it "renders a link to movies#index" do
+    render
 
-      assert_select "textarea[name=?]", "movie[synopsis]"
-
-      assert_select "input[name=?]", "movie[rating]"
-
-      assert_select "input[name=?]", "movie[actors]"
-
-      assert_select "input[name=?]", "movie[director]"
-    end
+    assert_select "a[href='/movies']"
   end
 end
