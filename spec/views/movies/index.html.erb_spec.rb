@@ -20,6 +20,7 @@ RSpec.describe "movies/index", type: :view do
       expect(rendered).to match movie.name
       expect(rendered).to match movie.synopsis
       expect(rendered).to match movie.actors
+      expect(rendered).to match movie.pictures.join
     end
   end
 
