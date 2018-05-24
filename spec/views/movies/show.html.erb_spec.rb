@@ -1,22 +1,39 @@
 require 'rails_helper'
 
 RSpec.describe "movies/show", type: :view do
-  before(:each) do
-    @movie = assign(:movie, Movie.create!(
-      :name => "Name",
-      :synopsis => "MyText",
-      :rating => 2,
-      :actors => "Actors",
-      :director => "Director"
-    ))
+  before do
+    ActsAsTenant.current_tenant = create(:user)
+    @movie = assign(:movie, create(:movie))
+    render
   end
 
-  it "renders attributes in <p>" do
-    render
-    expect(rendered).to match(/Name/)
-    expect(rendered).to match(/MyText/)
-    expect(rendered).to match(/2/)
-    expect(rendered).to match(/Actors/)
-    expect(rendered).to match(/Director/)
+  after do
+    ActsAsTenant.current_tenant = nil
+  end
+
+  it "renders movie attributes" do
+    expect(rendered).to match @movie.name
+    expect(rendered).to match @movie.pictures.join
+    expect(rendered).to match @movie.synopsis
+    expect(rendered).to match @movie.actors
+    expect(rendered).to match @movie.director
+  end
+
+  it 'renders movie rating as stars' do
+    assert_select '.star.active', @movie.rating
+    assert_select '.star.outline', 5 - @movie.rating
+  end
+
+  it 'renders movie rating as stars' do
+    assert_select '.star.active', @movie.rating
+    assert_select '.star.outline', 5 - @movie.rating
+  end
+
+  it "renders a link to movies#index" do
+    assert_select "a[href='#{movies_path}']", 1
+  end
+
+  it "renders a link to movies#show" do
+    assert_select "a[href='#{edit_movie_path(@movie)}']", 1
   end
 end
