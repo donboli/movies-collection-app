@@ -2,11 +2,11 @@ require 'rails_helper'
 
 RSpec.describe Movie, type: :model do
   before do
-    ActsAsTenant.default_tenant = create(:user)
+    ActsAsTenant.current_tenant = create(:user)
   end
 
   after do
-    ActsAsTenant.default_tenant = nil
+    ActsAsTenant.current_tenant = nil
   end
 
   it { should validate_presence_of(:name) }
