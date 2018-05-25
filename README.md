@@ -4,7 +4,8 @@
 
 ## Installation
 
-1. Install [Ruby on Rails](https://github.com/rails/rails).
+1. Install the [Ruby](https://www.ruby-lang.org/en/) version specified in the .ruby-version file.<br/>A recommended way to do this is through [rbenv](https://github.com/rbenv/rbenv).
+2. `gem install bundler`.
 2. Run `bundle` in the root project directory.
 3. Install and run [PostgreSQL](https://www.postgresql.org/).
 4. Set up the database by running `rake db:create db:migrate`.
