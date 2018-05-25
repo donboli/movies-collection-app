@@ -1,24 +1,30 @@
-# README
+# movie-collection-app
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+> This is a simple app that manages picture-based movie collections for multiple users. <br>It is built with [Ruby on Rails](https://rubyonrails.org/) + [Semantic UI](https://semantic-ui.com/) and uses server side rendering.
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+1. Install [Ruby on Rails](https://github.com/rails/rails).
+2. Run `bundle` in the root project directory.
+3. Install and run [PostgreSQL](https://www.postgresql.org/).
+4. Set up the database by running `rake db:create db:migrate`.
 
-* System dependencies
+## Run it
 
-* Configuration
+1. Start the server by running `rails s`.
+2. In your browser, navigate to http://localhost:3000.
 
-* Database creation
+## Test
 
-* Database initialization
+Run all tests via `rspec`.
 
-* How to run the test suite
+To automatically run the specs while developing:
+1. Use `bundle exec guard`.
+2. Then execute `rspec` within the Guard REPL.
 
-* Services (job queues, cache servers, search engines, etc.)
+## TODOs
 
-* Deployment instructions
-
-* ...
+- Style authentication pages.
+- Extract text into i18n translation files.
+- Properly style error messages.
+- Add view specs for authentication pages.
