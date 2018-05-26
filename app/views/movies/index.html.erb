@@ -4,9 +4,13 @@
   <% @movies.each do |movie| %>
     <div class="card">
       <div class="ui slide masked <%= movie.pictures.size > 1 ? 'reveal' : '' %> image">
-        <% movie.pictures.each_with_index do |picture, index| %>
-          <%= image_tag(picture.url, size: 250, alt: "picture#{index}",
-            class: "content #{index > 0 ? 'hidden' : 'visible'}") %>
+        <% if movie.pictures.empty? %>
+          <%= image_tag('placeholder.png') %>
+        <% else %>
+          <% movie.pictures.each_with_index do |picture, index| %>
+            <%= image_tag(picture.url, size: 250, alt: "picture#{index}",
+              class: "content #{index > 0 ? 'hidden' : 'visible'}") %>
+          <% end %>
         <% end %>
       </div>
       <div class="content">
