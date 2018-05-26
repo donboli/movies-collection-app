@@ -1,49 +1,22 @@
 <div class="ui segment piled">
-  <%= form_with(model: movie, local: true, class: 'ui form') do |form| %>
-  <% if movie.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
+  <%= simple_form_for movie do |form| %>
 
-      <ul>
-      <% movie.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+    <div class="two fields">
+      <%= form.input :name %>
+      <%= form.input :rating, input_html: { min: 0, max: 5, value: 0 } %>
     </div>
+
+    <div class="two fields">
+      <%= form.input :actors %>
+      <%= form.input :director %>
+    </div>
+
+    <%= form.input :synopsis, wrapper: :textfield %>
+
+    <%= form.label :pictures, 'Add Pictures', class: 'ui button' %>
+    <%= form.file_field :pictures, multiple: true, style: "display:none;" %>
+    <%= form.submit 'Submit', class: 'ui right floated button primary' %>
+
+    <%= render 'shared/form_errors', object: movie %>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :synopsis %>
-    <%= form.text_area :synopsis %>
-  </div>
-
-  <div class="three fields">
-    <div class="field">
-      <%= form.label :rating %>
-      <%= form.number_field :rating, min: 0, max: 5, value: 0 %>
-    </div>
-
-    <div class="field">
-      <%= form.label :actors %>
-      <%= form.text_field :actors %>
-    </div>
-
-    <div class="field">
-      <%= form.label :director %>
-      <%= form.text_field :director %>
-    </div>
-  </div>
-
-  <div class="inline field">
-  </div>
-
-  <%= form.label :pictures, 'Add Pictures', class: 'ui button' %>
-  <%= form.file_field :pictures, multiple: true, style: "display:none;" %>
-  <%= form.submit 'Submit', class: 'ui right floated button primary' %>
-<% end %>
 </div>
