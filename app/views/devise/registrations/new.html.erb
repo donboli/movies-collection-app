@@ -1,0 +1,38 @@
+<div class="ui grid center aligned middle aligned full-height">
+  <div class="column form-segment">
+    <div class="ui teal segment raised">
+      <h2>Sign up</h2>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui form'}) do |f| %>
+        <%= devise_error_messages! %>
+
+        <div class="field">
+          <div class="ui left icon input">
+            <%= semantic_icon('user') %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-Mail' %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui left icon input">
+            <%= semantic_icon('lock') %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="ui left icon input">
+            <%= semantic_icon('redo') %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Reenter Password" %>
+          </div>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Sign up", class: 'ui button primary' %>
+        </div>
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

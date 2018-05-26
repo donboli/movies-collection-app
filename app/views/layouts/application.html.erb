@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <div class="ui container">
+    <div class="ui container full-height wrapper">
       <%= link_to('Sign Out', destroy_user_session_path, method: :delete, class: 'ui button negative') if user_signed_in? %>
       <%= semantic_flash %>
 
