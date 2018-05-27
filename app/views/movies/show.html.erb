@@ -17,25 +17,25 @@
   </div>
 
   <div class="ui segment">
-    <strong>Synopsis:</strong>
+    <strong><%= t('.synopsis') %>:</strong>
     <%= @movie.synopsis %>
   </div>
 
   <div class="ui segments horizontal">
     <div class="ui segment">
-      <strong>Actors:</strong>
+      <strong><%= t('.actors') %>:</strong>
       <%= @movie.actors %>
     </div>
 
     <div class="ui segment">
-      <strong>Director:</strong>
+      <strong><%= t('.director') %>:</strong>
       <%= @movie.director %>
     </div>
   </div>
 </div>
 
 <div class="ui buttons">
-  <%= link_to 'Back', movies_path, class: 'ui button' %>
+  <%= link_to t('.back'), movies_path, class: 'ui button' %>
   <div class="or"></div>
-  <%= link_to 'Edit', edit_movie_path(@movie), class: 'ui button yellow' %> |
+  <%= link_to t('.edit'), edit_movie_path(@movie), class: 'ui button yellow' %> |
 </div>

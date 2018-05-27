@@ -1,0 +1,19 @@
+en:
+  movies:
+    index:
+      title: 'Movies'
+      are_you_sure: 'Are you sure you want to delete this movie?'
+      new_movie: 'New Movie'
+    edit:
+      title: 'Edit Movie'
+      back: 'Back'
+      show: 'Show'
+    new:
+      title: 'New Movie'
+      back: 'Back'
+    show:
+      synopsis: 'Synopsis'
+      actors: 'Actors'
+      director: 'Director'
+      back: 'Back'
+      edit: 'Edit'

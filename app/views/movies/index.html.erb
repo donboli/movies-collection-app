@@ -1,4 +1,4 @@
-<h1 class="ui header">Movies</h1>
+<h1 class="ui header"><%= t('.title') %></h1>
 
 <div class="ui cards">
   <% @movies.each do |movie| %>
@@ -37,7 +37,7 @@
           <%= link_to edit_movie_path(movie), method: :get, class: 'ui circular icon' do %>
             <%= semantic_icon('edit') %>
           <% end %>
-          <%= link_to movie, method: :delete, data: { confirm: 'Are you sure?' }, class: 'ui circular icon' do %>
+          <%= link_to movie, method: :delete, data: { confirm: t('.are_you_sure') }, class: 'ui circular icon' do %>
             <%= semantic_icon('trash alternate') %>
           <% end %>
         </span>
@@ -48,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Movie', new_movie_path, {class: 'ui button'} %>
+<%= link_to t('.new_movie'), new_movie_path, {class: 'ui button'} %>

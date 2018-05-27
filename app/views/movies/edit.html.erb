@@ -1,9 +1,9 @@
-<h1>Editing Movie</h1>
+<h1><%= t('.title') %></h1>
 
 <%= render 'form', movie: @movie %>
 
 <div class="ui buttons">
-  <%= link_to 'Back', movies_path, class: 'ui button' %>
+  <%= link_to t('.back'), movies_path, class: 'ui button' %>
   <div class="or"></div>
-  <%= link_to 'Show', @movie, class: 'ui button teal' %>
+  <%= link_to t('.show'), @movie, class: 'ui button teal' %>
 </div>

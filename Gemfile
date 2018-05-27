@@ -62,6 +62,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Watch and automatically run specs
   gem 'guard-rspec', require: false
+  # Debug i18n
+  gem 'i18n-debug'
 end
 
 group :test do
