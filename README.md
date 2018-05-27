@@ -22,10 +22,3 @@ Run all tests via `rspec`.
 To automatically run the specs while developing:
 1. Use `bundle exec guard`.
 2. Then execute `rspec` within the Guard REPL.
-
-## TODOs
-
-- Style authentication pages.
-- Extract text into i18n translation files.
-- Properly style error messages.
-- Add view specs for authentication pages.
