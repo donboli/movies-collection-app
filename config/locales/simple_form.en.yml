@@ -36,3 +36,8 @@ en:
         rating: Enter a number from 0 to 5
         actors: Enter the names of the actors
         director: Enter the director's name
+  helpers:
+    submit:
+      movie:
+        create: 'Create %{model}'
+        update: 'Save Changes'
