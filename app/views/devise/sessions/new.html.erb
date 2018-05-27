@@ -1,19 +1,19 @@
 <div class="ui grid center aligned middle aligned full-height">
   <div class="column form-segment">
     <div class="ui teal segment raised">
-      <h2>Log in</h2>
+      <h2><%= t('.log_in') %></h2>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'ui form'}) do |f| %>
         <div class="field">
           <div class="ui left icon input">
             <%= semantic_icon('user') %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-Mail' %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('.email') %>
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <%= semantic_icon('lock') %>
-            <%= f.password_field :password, autocomplete: "off", placeholder: 'Password' %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: t('.password') %>
           </div>
         </div>
 
@@ -27,7 +27,7 @@
         <% end -%>
 
         <div class="actions">
-          <%= f.submit "Log in", class: 'ui button primary' %>
+          <%= f.submit t('.log_in'), class: 'ui button primary' %>
         </div>
       <% end %>
 

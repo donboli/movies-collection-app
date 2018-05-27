@@ -1,7 +1,7 @@
 <div class="ui grid center aligned middle aligned full-height">
   <div class="column form-segment">
     <div class="ui teal segment raised">
-      <h2>Sign up</h2>
+      <h2><%= t('.sign_up') %></h2>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'ui form'}) do |f| %>
         <%= devise_error_messages! %>
@@ -9,26 +9,26 @@
         <div class="field">
           <div class="ui left icon input">
             <%= semantic_icon('user') %>
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'E-Mail' %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('.email') %>
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <%= semantic_icon('lock') %>
-            <%= f.password_field :password, autocomplete: "off", placeholder: "Password" %>
+            <%= f.password_field :password, autocomplete: "off", placeholder: t(".password") %>
           </div>
         </div>
 
         <div class="field">
           <div class="ui left icon input">
             <%= semantic_icon('redo') %>
-            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: "Reenter Password" %>
+            <%= f.password_field :password_confirmation, autocomplete: "off", placeholder: t(".reenter_password") %>
           </div>
         </div>
 
         <div class="actions">
-          <%= f.submit "Sign up", class: 'ui button primary' %>
+          <%= f.submit t('.sign_up'), class: 'ui button primary' %>
         </div>
       <% end %>
 
