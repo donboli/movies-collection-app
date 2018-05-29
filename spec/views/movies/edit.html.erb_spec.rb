@@ -15,7 +15,7 @@ RSpec.describe "movies/edit", type: :view do
   end
 
   it "renders the edit title" do
-    assert_select 'h1', 'Editing Movie'
+    assert_select 'h1', 'Edit Movie'
   end
 
   it "renders a link to movies#index" do
